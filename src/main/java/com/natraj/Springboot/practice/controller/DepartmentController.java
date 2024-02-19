@@ -10,22 +10,22 @@ import java.util.List;
 @RestController
 //by adding this it will behave like a rest controller now we can create rest API
 public class DepartmentController {
-    @Autowired //we tell spring by this annotation that autowired is a particular abject that you have in a spring container
-    // this autowired will attach the object to this below reference that we have created
+    @Autowired //we tell spring by this annotation that autowired is a particular object that you have in a spring container
+    // this autowired will attach the object to this below reference variable that we have created
     private DepartmentService dpartmentservice; //spring does not understand we have to tell spring by
     //annotation autowired that this object i want it from you
 
     //creating methods for our controller
     //creating method to save department
     @PostMapping("/Departments")//calling this post with departments
-    //we are creating rest api using postmapping doing post request from any of the rest client we will be
-    //passing the request body as well whatever request we are getting  that will be the entire json object now we
+    //we are creating rest api using postmapping, doing post request from any of the rest client, we will be
+    //passing the request body as well, whatever request we are getting  that will be the entire json object now we
     // have to convert that json object to department entity
 
     //defining what we want as input
-    //now whatever jason data that we are passing has to be converted to this department for that we add
+    //now whatever jason data that we are passing has to be converted to this department java object for that we add
     //requestbody annotation so we are telling spring that whatever jason data you are getting as a request
-    //body get that json and convert it to department object that we defined below
+    //body get that json and convert it to department java object that we defined below
 
     public Department saveDepartment(@RequestBody Department department)
     // now we have to call tha service layer
